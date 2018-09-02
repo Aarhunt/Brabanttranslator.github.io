@@ -1,0 +1,13 @@
+body {
+    text-align: center;
+    background-image: url("http://www.flagz.co.nz/wp-content/uploads/2013/08/Red-and-White-Chequered-Flag.png")
+  }
+  div {
+    margin-top: 15px;
+  }
+  
+  .image-section {
+    display: flex;
+    justify-content: center;
+    
+  }

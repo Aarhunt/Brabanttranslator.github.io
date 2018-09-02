@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+        .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button1 {padding: 10px 24px;}
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+.button1 {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+input[type=submit] {
+    width: 10%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+input[type=text] {
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+        text-align: center;
+    box-sizing: border-box;
+    border: 2px solid green;
+    border-radius: 4px;
+    background-color: rgb(241, 241, 241);
+    color: black;
+}
+        </style>
+        <title>Brabant</title>
+        <link rel="stylesheet" href="styles/styles.css" />
+        <script async src="./javascript/index.js"></script>
+      </head>
+        <h1>Goedendag, Brabant lover of hater!</h1>
+        <h4 id='date'></h4>
+<body>
+    <input type="text" id="myText" value="Konijntje">
+    <br>
+    <button class="button button1" onclick="myFunction()">Vertalen!</button>
+    <p id="demo"></p>
+
+<script>
+  function myFunction() {
+  console.log('Booting up Brabant Translator')
+  var ABN = document.getElementById("myText").value;
+console.log('ABN Input = ' + ABN)
+
+//dubbel a aan begin wordt 'eh' (epke)
+var B1 = ABN
+var H1 = B1.slice(0,2)
+if (H1 == 'aa' || H1 == 'Aa') {
+  var B1 = ABN.replace(/aa/i, 'Eh')
+}
+
+//2e a wordt een e (epke)
+var B2 = B1 
+var H2= B2.slice(1,2)
+if (H2 == 'a') {
+  var B2 = B1.replace(/a/i, 'e')
+}
+
+//2e o moet oprotten
+var B3 = B2 
+var H3 = B3.slice(1,2)
+if (H3 == 'o') {
+  var B3 = B2.replace(/o/i, '')
+}
+
+//Dubbel A wordt een i (mikken)
+var B4 = B3.replace(/aa/i, 'i')
+
+//bei aan t einde wordt een bezie
+var B5 = B4
+var H4= B4.slice(-3)
+if (H4 == 'bei') {
+  var B5 = B4.replace(/bei/i, 'bezie')
+}
+
+//Alle oe's worden dubbel u (muur)
+var B6 = B5.replace(/oe/gi, 'uu')
+
+//Alle o's worden u's (muts)
+var B7 = B6.replace(/o/gi, 'u')
+
+//alle t aan t ende motte oprotte
+var B8 = B7
+var H8 = B8.slice(-1)
+if (H8 == 't') {
+  var B8 = B7.slice(0, -1)
+}
+
+//Bes wordt bezie
+var B9 = B8.replace(/bes/gi, 'bezie')
+
+var B10 = B9
+var H10 = B10.slice(0,5)
+console.log(H10)
+if (H10 == 'bezie') {
+  var B10 = B9.replace(/bezie/g, 'Bezie')
+}
+
+
+
+
+console.log('Brabant Output = ' + B10)
+
+    var ABN = document.getElementById("myText").value;
+    document.getElementById("demo").innerHTML = B10
+    document.getElementById("demo").style.fontSize = "1000%";
+}
+
+
+
+</script>
+</body>
+</html>
+
