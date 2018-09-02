@@ -100,8 +100,12 @@ if (H2 == 'a') {
   var B2 = B1.replace(/a/i, 'e')
 }
 
+//Alle oe's worden dubbel u (muur)
+var Q1 = B2
+var B3 = Q1.replace(/oe/gi, 'uu')
+
 //2e o moet oprotten
-var B3 = B2 
+var B3 = Q1 
 var H3 = B3.slice(1,2)
 if (H3 == 'o') {
   var B3 = B2.replace(/o/i, '')
@@ -117,8 +121,7 @@ if (H4 == 'bei') {
   var B5 = B4.replace(/bei/i, 'bezie')
 }
 
-//Alle oe's worden dubbel u (muur)
-var B6 = B5.replace(/oe/gi, 'uu')
+
 
 //Alle o's worden u's (muts)
 var B7 = B6.replace(/o/gi, 'u')
@@ -140,13 +143,19 @@ if (H10 == 'bezie') {
   var B10 = B9.replace(/bezie/g, 'Bezie')
 }
 
+var B11 = B10
+if (ABN == Aardappel || ABN == aardappel)
+B11 = 'Erpel'
 
+var B12 = B11
+if (ABN == Ui || ABN == ui)
+B12 = 'Juin'
 
 
 console.log('Brabant Output = ' + B10)
 
     var ABN = document.getElementById("myText").value;
-    document.getElementById("demo").innerHTML = B10
+    document.getElementById("demo").innerHTML = B11
     document.getElementById("demo").style.fontSize = "1000%";
 }
 
