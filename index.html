@@ -115,10 +115,10 @@ if (H3 == 'o') {
 var B4 = B3.replace(/aa/i, 'i')
 
 //bei aan t einde wordt een bezie
-var B5 = B4
+var B6 = B4
 var H4= B4.slice(-3)
 if (H4 == 'bei') {
-  var B5 = B4.replace(/bei/i, 'bezie')
+  var B6 = B4.replace(/bei/i, 'bezie')
 }
 
 
@@ -144,18 +144,21 @@ if (H10 == 'bezie') {
 }
 
 var B11 = B10
-if (ABN == Aardappel || ABN == aardappel)
+if (ABN == 'Aardappel' || ABN == 'aardappel')
 B11 = 'Erpel'
 
 var B12 = B11
-if (ABN == Ui || ABN == ui)
+if (ABN == 'Ui' || ABN == 'ui')
 B12 = 'Juin'
 
+var B13 = B12
+if (ABN == 'Paard' || ABN == 'paard')
+B13 = 'Perd'
 
 console.log('Brabant Output = ' + B10)
 
     var ABN = document.getElementById("myText").value;
-    document.getElementById("demo").innerHTML = B11
+    document.getElementById("demo").innerHTML = B13
     document.getElementById("demo").style.fontSize = "1000%";
 }
 
